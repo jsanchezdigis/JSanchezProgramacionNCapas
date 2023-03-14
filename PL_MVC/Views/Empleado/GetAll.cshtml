@@ -1,0 +1,89 @@
+﻿@model ML.Empleado
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <h2>Empleado</h2>
+    </div>
+    <hr />
+    <div class="row">
+        <div style="float:right">
+            @Html.ActionLink("Agregar Empleado", "Form", "Empleado", htmlAttributes: new { @class = "btn btn-success" })
+        </div>
+    </div>
+    <hr />
+
+    <div class="row">
+        @if (Model.Empleados != null)
+        {
+            //tabla
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <td class="text-center" style=" font-weight:bold;">Editar</td>
+
+                        <td class="hidden">NumeroEmpleado</td>
+                        <td class="text-center" style=" font-weight:bold;">Foto</td>
+                        <td class="text-center" style=" font-weight:bold;">Nombre</td>
+                        @*<td class="text-center" style=" font-weight:bold;">Apellido Paterno</td>
+                            <td class="text-center" style=" font-weight:bold;">Apellido Materno</td>*@
+                        <td class="text-center" style=" font-weight:bold;">Email</td>
+                        <td class="text-center" style=" font-weight:bold;">Telefono</td>
+                        <td class="text-center" style=" font-weight:bold;">Fecha Nacimiento</td>
+                        <td class="text-center" style=" font-weight:bold;">NSS</td>
+                        <td class="text-center" style=" font-weight:bold;">Fecha Ingreso</td>
+                        <td class="text-center" style=" font-weight:bold;">NombreEmpresa</td>
+
+                        <td class="text-center" style=" font-weight:bold;">Eliminar</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (ML.Empleado empleado in Model.Empleados)
+                    {
+                        <tr>
+                            <td class="text-center"><a class="btn btn-warning glyphicon glyphicon-edit" href="@Url.Action("Form", "Empleado", new { NumeroEmpleado = empleado.NumeroEmpleado })"></a></td>
+
+                            <td>
+                                @if (empleado.Foto != null)
+                                {
+
+                                    <img id="Img" src="data:image/*;base64,@empleado.Foto" style="width:250px ; height:250px" />
+
+                                }
+                                else
+                                {
+                                    <img id="Img" src="~/Imagenes/UserDefault.jpg" style="width:250px ; height:250px" />
+                                }
+                            </td>
+
+                            <td class="hidden">@empleado.NumeroEmpleado</td>
+                            <td>@empleado.Nombre @empleado.ApellidoPaterno @empleado.ApellidoMaterno</td>
+                            <td>@empleado.Email</td>
+                            <td>@empleado.Telefono</td>
+                            <td>@empleado.FechaNacimiento</td>
+                            <td>@empleado.NSS</td>
+                            <td>@empleado.FechaIngreso</td>
+
+                            <td class="hidden">@empleado.Empresa.IdEmpresa</td>
+                            <td>@empleado.Empresa.Nombre</td>
+
+
+                            <td class="text-center"><a class="btn btn-danger glyphicon glyphicon-trash" href="@Url.Action("Delete", "Empleado", new { NumeroEmpleado = empleado.NumeroEmpleado })" onclick="return confirm('Estas seguro que deseas eliminar este registro?');"></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+        }
+        else
+        {
+            <div class="alert alert-danger" role="alert">Ocurrio un error al realizar la consulta </div>
+        }
+    </div>
+</div>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b408dd05eaf45488c53333f9560814c" Name="Diagram1">
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Rol" Width="1.5" PointX="0.75" PointY="2.25" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Aseguradora" Width="1.5" PointX="5.25" PointY="15.25" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Colonia" Width="1.5" PointX="3" PointY="10.125" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Dependiente" Width="1.5" PointX="14.875" PointY="8.75" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.DependienteTipo" Width="1.5" PointX="12.625" PointY="13.625" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Direccion" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.EmpresaPoliza" Width="1.5" PointX="7.5" PointY="9.125" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Estado" Width="1.5" PointX="0.75" PointY="7.25" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Movimiento" Width="1.5" PointX="8.25" PointY="4.875" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.MovimientoDetalle" Width="1.5" PointX="15.625" PointY="3.375" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.MovimientoTipo" Width="1.5" PointX="6" PointY="19.25" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Municipio" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Pai" Width="1.5" PointX="0.75" PointY="14.375" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Poliza" Width="1.5" PointX="5.25" PointY="4.5" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Status" Width="1.5" PointX="13.375" PointY="3.5" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.SubPoliza" Width="1.5" PointX="3" PointY="13.25" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Vigencia" Width="1.5" PointX="10.5" PointY="4.625" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_Aseguradora" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_ColoniaDireccion" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_MunicipioColonia" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_DependienteTipoDependiente" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_PolizaEmpresaPoliza" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_EstadoMunicipio" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_PaisEstado" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_MovimientoTipoMovimiento" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_StatusMovimientoDetalle" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_PolizaVigencia" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_SubPolizaPoliza" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Usuario" Width="1.5" PointX="3" PointY="4" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_UsuarioAseguradora" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_UsuarioDireccion" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_UsuarioEmpresaPoliza" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_UsuarioMovimiento" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_UsuarioPoliza" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.FK__Usuario__IdRol__4BAC3F29" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_UsuarioVigencia" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Empleado" Width="1.5" PointX="12.625" PointY="8.5" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_EmpleadoDependiente" />
+        <EntityTypeShape EntityType="JSanchezProgramacionNCapasModel.Empresa" Width="1.5" PointX="10.375" PointY="9.125" />
+        <AssociationConnector Association="JSanchezProgramacionNCapasModel.fk_EmpresaEmpleado" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
