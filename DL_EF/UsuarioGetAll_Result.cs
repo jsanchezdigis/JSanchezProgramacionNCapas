@@ -27,6 +27,7 @@ namespace DL_EF
         public string CURP { get; set; }
         public string Imagen { get; set; }
         public Nullable<byte> IdRol { get; set; }
+        public Nullable<bool> Status { get; set; }
         public string NombreRol { get; set; }
         public Nullable<int> IdDireccion { get; set; }
         public string Calle { get; set; }
@@ -39,5 +40,6 @@ namespace DL_EF
         public string NombreMunicipio { get; set; }
         public Nullable<int> IdEstado { get; set; }
         public string NombreEstado { get; set; }
+        public Nullable<int> IdPais { get; set; }
     }
 }

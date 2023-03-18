@@ -574,22 +574,25 @@ namespace BL
             return result;
         }
 
-        public static ML.Result GetAllEF()
+        public static ML.Result GetAllEF(ML.Usuario usuario)
         {
             ML.Result result = new ML.Result();
+            usuario.Nombre = "";
+            usuario.ApellidoPaterno = "";
+            usuario.ApellidoMaterno = "";
 
             try
             {
                 using (DL_EF.JSanchezProgramacionNCapasEntities context = new DL_EF.JSanchezProgramacionNCapasEntities())
                 {
-                    var query = context.UsuarioGetAll().ToList();
+                    var query = context.UsuarioGetAll(usuario.Nombre,usuario.ApellidoPaterno,usuario.ApellidoMaterno).ToList();
 
                     if (query != null)
                         {
                         result.Objects = new List<object>();
                         foreach (var obj in query)
                         {
-                            ML.Usuario usuario = new ML.Usuario();
+                            usuario = new ML.Usuario();
 
                             usuario.IdUsuario = obj.IdUsuario;
                             usuario.UserNombre = obj.UserNombre;

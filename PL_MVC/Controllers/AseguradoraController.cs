@@ -12,7 +12,9 @@ namespace PL_MVC.Controllers
         [HttpGet]
         public ActionResult GetAll()
         {
-            ML.Result result = BL.Aseguradora.GetAllEF();//EF
+            AseguradoraService.AseguradoraClient aseguradoraClient = new AseguradoraService.AseguradoraClient();//WCF
+            ML.Result result = aseguradoraClient.GetAll();//WCF
+            //ML.Result result = BL.Aseguradora.GetAllEF();//EF
             ML.Aseguradora aseguradora = new ML.Aseguradora();
 
             if (result.Correct)
@@ -30,7 +32,9 @@ namespace PL_MVC.Controllers
         //Formulario
         public ActionResult Form(int? IdAseguradora)
         {
-            ML.Result resultUsuario = BL.Usuario.GetAllEF();
+            AseguradoraService.AseguradoraClient aseguradoraClient = new AseguradoraService.AseguradoraClient();//WCF
+            ML.Usuario usuario = new ML.Usuario();
+            ML.Result resultUsuario = BL.Usuario.GetAllEF(usuario);
             ML.Aseguradora aseguradora = new ML.Aseguradora();
             aseguradora.Usuario = new ML.Usuario();
 
@@ -46,7 +50,8 @@ namespace PL_MVC.Controllers
             else
             {
                 //GetById
-                ML.Result result = BL.Aseguradora.GetByIdEF(IdAseguradora.Value);
+                //ML.Result result = BL.Aseguradora.GetByIdEF(IdAseguradora.Value);
+                ML.Result result = aseguradoraClient.GetById(IdAseguradora.Value);//WCF
 
                 if (result.Correct)
                 {
@@ -66,11 +71,13 @@ namespace PL_MVC.Controllers
         public ActionResult Form(ML.Aseguradora aseguradora)
         {
             ML.Result result = new ML.Result();
+            AseguradoraService.AseguradoraClient aseguradoraClient = new AseguradoraService.AseguradoraClient();//WCF
 
             if (aseguradora.IdAseguradora == 0)
             {
                 //Add
-                result = BL.Aseguradora.AddEF(aseguradora);
+                //result = BL.Aseguradora.AddEF(aseguradora);
+                result = aseguradoraClient.Add(aseguradora);
 
                 if (result.Correct)
                 {
@@ -85,7 +92,9 @@ namespace PL_MVC.Controllers
             else
             {
                 //Update
-                result = BL.Aseguradora.UpdateEF(aseguradora);
+                //result = BL.Aseguradora.UpdateEF(aseguradora);
+                result = aseguradoraClient.Update(aseguradora);
+
                 if (result.Correct)
                 {
                     ViewBag.Message = "Se actualizo el registro satisfactoriamente";
@@ -102,8 +111,11 @@ namespace PL_MVC.Controllers
         public ActionResult Delete(ML.Aseguradora aseguradora)
         {
             ML.Result result = new ML.Result();
+            AseguradoraService.AseguradoraClient aseguradoraClient = new AseguradoraService.AseguradoraClient();//WCF
 
-            result = BL.Aseguradora.DeleteEF(aseguradora);
+            //result = BL.Aseguradora.DeleteEF(aseguradora);
+            result = aseguradoraClient.Delete(aseguradora);
+
             if (result.Correct)
             {
                 ViewBag.Message = "Se elimino el registro satisfactoriamente";

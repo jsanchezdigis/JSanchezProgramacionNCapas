@@ -56,6 +56,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -127,6 +129,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\AseguradoraService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EmpleadoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AseguradoraController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -137,6 +149,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\AseguradoraService\Aseguradora.disco" />
+    <None Include="Connected Services\AseguradoraService\configuration91.svcinfo" />
+    <None Include="Connected Services\AseguradoraService\configuration.svcinfo" />
+    <None Include="Connected Services\AseguradoraService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EmpleadoService\Empleado.disco" />
+    <None Include="Connected Services\EmpleadoService\configuration91.svcinfo" />
+    <None Include="Connected Services\EmpleadoService\configuration.svcinfo" />
+    <None Include="Connected Services\EmpleadoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -147,6 +173,39 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Properties\DataSources\ML.Result.datasource" />
+    <None Include="Connected Services\AseguradoraService\Aseguradora.wsdl" />
+    <None Include="Connected Services\AseguradoraService\Aseguradora.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AseguradoraService\Aseguradora1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AseguradoraService\Aseguradora2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AseguradoraService\Aseguradora3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AseguradoraService\Aseguradora4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EmpleadoService\Empleado.wsdl" />
+    <None Include="Connected Services\EmpleadoService\Empleado.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EmpleadoService\Empleado1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EmpleadoService\Empleado2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EmpleadoService\Empleado3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EmpleadoService\Empleado4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -208,6 +267,13 @@
       <Project>{acb040cd-7f4f-437b-81f8-a163e18a9708}</Project>
       <Name>ML</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AseguradoraService\" />
+    <WCFMetadataStorage Include="Connected Services\EmpleadoService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

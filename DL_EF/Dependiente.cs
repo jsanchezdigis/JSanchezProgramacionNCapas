@@ -24,6 +24,7 @@ namespace DL_EF
         public string Telefono { get; set; }
         public string RFC { get; set; }
         public Nullable<int> IdDependienteTipo { get; set; }
+        public System.DateTime FechaNacimiento { get; set; }
     
         public virtual DependienteTipo DependienteTipo { get; set; }
         public virtual Empleado Empleado { get; set; }

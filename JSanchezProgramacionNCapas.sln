@@ -10,10 +10,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML", "ML\ML.csproj", "{ACB040CD-7F4F-437B-81F8-A163E18A9708}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "PL\PL.csproj", "{182501E6-FBF8-4D02-BE04-D56717A7F1A2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C} = {8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL_EF", "DL_EF\DL_EF.csproj", "{46602D3A-1D17-4810-9BA8-9D7505382AEC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL_MVC", "PL_MVC\PL_MVC.csproj", "{69E5B642-990F-4B5B-A018-71515543C7DB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C} = {8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL", "SL\SL.csproj", "{8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +53,10 @@ Global
 		{69E5B642-990F-4B5B-A018-71515543C7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69E5B642-990F-4B5B-A018-71515543C7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69E5B642-990F-4B5B-A018-71515543C7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F92A9A8-98A0-457D-9C4A-6EE0CA2C185C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

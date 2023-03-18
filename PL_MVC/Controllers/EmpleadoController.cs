@@ -12,8 +12,29 @@ namespace PL_MVC.Controllers
         [HttpGet]
         public ActionResult GetAll()
         {
-            ML.Result result = BL.Empleado.GetAllEF();//EF
+            EmpleadoService.EmpleadoClient empleadoClient = new EmpleadoService.EmpleadoClient();//WCF
             ML.Empleado empleado = new ML.Empleado();
+            empleado.Empresa = new ML.Empresa();
+            //ML.Result result = BL.Empleado.GetAllEF(empleado);//EF
+            ML.Result result = empleadoClient.GetAll(empleado);
+
+            if (result.Correct)
+            {
+                empleado.Empleados = result.Objects;
+                return View(empleado);
+            }
+            else
+            {
+                return View(empleado);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult GetAll(ML.Empleado empleado)
+        {
+            EmpleadoService.EmpleadoClient empleadoClient = new EmpleadoService.EmpleadoClient();//WCF
+            ML.Result result = empleadoClient.GetAll(empleado);//WCF
+            //ML.Result result = BL.Empleado.GetAllEF(empleado);//EF
 
             if (result.Correct)
             {
@@ -47,7 +68,9 @@ namespace PL_MVC.Controllers
             else
             {
                 //GetById
-                ML.Result result = BL.Empleado.GetByIdEF(NumeroEmpleado);
+                EmpleadoService.EmpleadoClient empleadoClient = new EmpleadoService.EmpleadoClient();//WCF
+                ML.Result result = empleadoClient.GetById(NumeroEmpleado);
+                //ML.Result result = BL.Empleado.GetByIdEF(NumeroEmpleado);
 
                 if (result.Correct)
                 {
@@ -76,11 +99,13 @@ namespace PL_MVC.Controllers
             }
 
             ML.Result result = new ML.Result();
+            EmpleadoService.EmpleadoClient empleadoClient = new EmpleadoService.EmpleadoClient();//WCF
 
             if (empleado.NumeroEmpleado == "")//Tenia ==0
             {
                 //Add
-                result = BL.Empleado.AddEF(empleado);
+                //result = BL.Empleado.AddEF(empleado);
+                result = empleadoClient.Add(empleado);//WCF
 
                 if (result.Correct)
                 {
@@ -95,7 +120,8 @@ namespace PL_MVC.Controllers
             else
             {
                 //Update
-                result = BL.Empleado.UpdateEF(empleado);
+                //result = BL.Empleado.UpdateEF(empleado);
+                result = empleadoClient.Update(empleado);//WCF
                 if (result.Correct)
                 {
                     ViewBag.Message = "Se actualizo el registro satisfactoriamente";
@@ -112,8 +138,11 @@ namespace PL_MVC.Controllers
         public ActionResult Delete(ML.Empleado empleado)
         {
             ML.Result result = new ML.Result();
+            EmpleadoService.EmpleadoClient empleadoClient = new EmpleadoService.EmpleadoClient();//WCF
 
-            result = BL.Empleado.DeleteEF(empleado);
+            //result = BL.Empleado.DeleteEF(empleado);
+            result = empleadoClient.Delete(empleado);
+
             if (result.Correct)
             {
                 ViewBag.Message = "Se elimino el registro satisfactoriamente";

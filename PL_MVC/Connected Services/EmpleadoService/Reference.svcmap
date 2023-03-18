@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="e6eb72cf-a310-46aa-b6fc-e43c5b63e892" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50482/Empleado.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Empleado.xsd" MetadataType="Schema" ID="2f8151e6-6322-4701-bab4-3fdc86ba4319" SourceId="1" SourceUrl="http://localhost:50482/Empleado.svc?xsd=xsd1" />
+    <MetadataFile FileName="Empleado1.xsd" MetadataType="Schema" ID="b8fb6e5c-96f1-49d4-8978-32565a143a53" SourceId="1" SourceUrl="http://localhost:50482/Empleado.svc?xsd=xsd0" />
+    <MetadataFile FileName="Empleado2.xsd" MetadataType="Schema" ID="a8102bc5-c1f8-4b23-9723-0bdb07797f8a" SourceId="1" SourceUrl="http://localhost:50482/Empleado.svc?xsd=xsd3" />
+    <MetadataFile FileName="Empleado.disco" MetadataType="Disco" ID="e40cce3a-acf6-4e73-a744-4001b01716c3" SourceId="1" SourceUrl="http://localhost:50482/Empleado.svc?disco" />
+    <MetadataFile FileName="Empleado3.xsd" MetadataType="Schema" ID="ae6c7b52-15da-4d16-b6e9-343fa13579ec" SourceId="1" SourceUrl="http://localhost:50482/Empleado.svc?xsd=xsd2" />
+    <MetadataFile FileName="Empleado4.xsd" MetadataType="Schema" ID="2be97045-8df8-4dd5-a14e-8c5918e0ee4a" SourceId="1" SourceUrl="http://localhost:50482/Empleado.svc?xsd=xsd4" />
+    <MetadataFile FileName="Empleado.wsdl" MetadataType="Wsdl" ID="633d9998-9373-46d5-9020-d000b065e997" SourceId="1" SourceUrl="http://localhost:50482/Empleado.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

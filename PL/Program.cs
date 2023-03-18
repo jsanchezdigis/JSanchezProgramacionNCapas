@@ -14,7 +14,7 @@ namespace PL
             while (fin != 1)
             {
                 Console.Write("CRUD Entity Framework");
-                Console.Write("\n1-Agregar(ADD) \n2.-Actualizar(Update) \n3.-Eliminar(Delete) \n4.-Mostrar(GetAll) \n5.-MostarID(GetById)\n6.-Salir");
+                Console.Write("\n1-Agregar(ADD) \n2.-Actualizar(Update) \n3.-Eliminar(Delete) \n4.-Mostrar(GetAll) \n5.-MostarID(GetById)\n6.-Operaciones\n7.-Salir");
                 Console.Write("\nIngrese la opcion deseada: ");
                 int op = Int32.Parse(Console.ReadLine());
                 switch (op)
@@ -40,6 +40,9 @@ namespace PL
                         PL.Aseguradora.GetById();
                         break;
                     case 6:
+                        PL.Operaciones.Operaciones1();
+                        break;
+                    case 7:
                         fin = 1;
                         break;
                     default:

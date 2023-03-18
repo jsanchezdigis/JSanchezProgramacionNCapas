@@ -13,8 +13,25 @@ namespace PL_MVC.Controllers
         [HttpGet]
         public ActionResult GetAll()
         {
-            ML.Result result = BL.Usuario.GetAllEF();//EF
             ML.Usuario usuario = new ML.Usuario();
+            ML.Result result = BL.Usuario.GetAllEF(usuario);//EF
+
+            if (result.Correct)
+            {
+                usuario.Usuarios = result.Objects;
+                return View(usuario);
+            }
+            else
+            {
+                return View(usuario);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult GetAll(ML.Usuario usuario)
+        {
+            ML.Result result = BL.Usuario.GetAllEF(usuario);//EF
+            //ML.Usuario usuario = new ML.Usuario();
 
             if (result.Correct)
             {
